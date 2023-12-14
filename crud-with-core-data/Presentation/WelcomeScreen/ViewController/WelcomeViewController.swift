@@ -34,7 +34,7 @@ class WelcomeViewController: UIViewController {
         titleLabel.text = "WELCOME SCREEN"
         titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         titleLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().inset(25)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(25)
             make.centerX.equalToSuperview()
         }
         
@@ -43,7 +43,7 @@ class WelcomeViewController: UIViewController {
         navButton.setTitleColor(.black, for: .normal)
         navButton.addTarget(self, action: #selector(navigateTo), for: .touchUpInside)
         navButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(15)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(15)
             make.centerX.equalToSuperview()
             make.leading.equalToSuperview().inset(15)
             make.trailing.equalToSuperview().inset(15)

@@ -37,10 +37,11 @@ class HomeTabViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = .blue
         
-        setupViews()
-        
-        getStudentsData()
+//        setupViews()
+//
+//        getStudentsData()
     }
 
     private func getStudentsData() {

@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-final class HomeTabCoordinator: TabBarCoordinator {
+final class HomeTabCoordinator: NSObject, TabBarCoordinator {
+    var viewController: HomeTabViewController
+    
     var tabBarItem: UITabBarItem
     
     weak var parentCoordinator: MainTabCoordinator?
@@ -19,18 +21,34 @@ final class HomeTabCoordinator: TabBarCoordinator {
     init(navigationController: UINavigationController, tabBarItem: UITabBarItem) {
         self.navigationController = navigationController
         self.tabBarItem = tabBarItem
+        self.viewController = ViewControllerFactory.makeHomeTabViewController()
+        
+        
     }
     
     func start() {
-        let homeTabViewController = HomeTabViewController()
-        homeTabViewController.coordinator = self
+        navigationController.delegate = self
+        viewController.tabBarItem = self.tabBarItem
+        viewController.coordinator = self
         navigationController.navigationBar.isHidden = true
-        navigationController.pushViewController(homeTabViewController, animated: true)
+        navigationController.pushViewController(viewController, animated: true)
+        
+        
     }
     
     func finish() {
         
     }
     
+    func childDidFinish(_ coordinator: Coordinator?) {
+        guard let coordinator = coordinator else { return }
+        removeChildCoordinator(coordinator)
+    }
     
 }
+
+extension HomeTabCoordinator: UINavigationControllerDelegate {
+    
+}
+
+

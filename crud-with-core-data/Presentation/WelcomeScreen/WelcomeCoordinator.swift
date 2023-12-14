@@ -28,7 +28,7 @@ final class WelcomeCoordinator: WelcomeCoordinatorProtocol {
     }
     
     func finish() {
-        parentCoordinator?.mainTabBarFlow()
+        parentCoordinator?.startAuthenticatedFlow()
     }
     
     func startLoginViewController() {

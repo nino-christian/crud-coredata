@@ -52,8 +52,8 @@ enum TabBarItem {
 
 protocol TabBarCoordinator: Coordinator {
     var tabBarItem: UITabBarItem { get }
-    
-    var parentCoordinator: Coordinator? { get set }
+    var navigationController: UINavigationController { get set }
+    var parentCoordinator: MainTabCoordinator? { get set }
 }
 
 
@@ -63,35 +63,54 @@ final class MainTabCoordinator: NSObject, Coordinator{
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
     
-    let tabBarController: UITabBarController = .init()
+    let tabBarController: UITabBarController
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, tabBarController: UITabBarController) {
         self.navigationController = navigationController
+        self.tabBarController = tabBarController
     }
     
     func start() {
-        let homeTabCoordinator = TabBarCoordinatorFactory().makeChildTabCoordinators(tabItem: .home)
-        homeTabCoordinator.parentCoordinator = self
-        homeTabCoordinator.start()
-        childCoordinators.append(homeTabCoordinator)
+        let tabItems: [TabBarItem] = [.home, .feed, .profile]
+            .sorted(by: { $0.tabOrderNumber() < $1.tabOrderNumber() })
         
-        let addTabCoordinator = FeedTabCoordinator(navigationController: navigationController)
-        addTabCoordinator.parentCoordinator = self
-        childCoordinators.append(addTabCoordinator)
+        let tabCoordinators: [TabBarCoordinator] = tabItems.compactMap {
+            let coordinator = CoordinatorFactory.makeChildTabCoordinators(tabItem: $0)
+            return coordinator
+        }
         
-       // mainTabController.viewControllers = [homeTabCoordinator.navigationController,
-       //                                      addTabCoordinator.navigationController]
+        for coordinator in tabCoordinators {
+            coordinator.parentCoordinator = self
+            coordinator.start()
+            childCoordinators.append(coordinator)
+        }
         
-        //navigationController.pushViewController(mainTabController, animated: true)
+        let tabNavContollers: [UINavigationController] = tabCoordinators.compactMap { $0.navigationController }
+    
+        prepareTabBarController(withControllers: tabNavContollers)
     }
     
     func finish() {
-        
+//        for coordinator in childCoordinators {
+//            coordinator.finish()
+//        }
+//        childCoordinators.removeAll()
     }
     
-    func childDidFinish(_ coordinator: Coordinator?) {
-        guard let coordinator = coordinator else { return }
-        removeChildCoordinator(coordinator)
+    private func prepareTabBarController(withControllers tabNavControllers: [UINavigationController]) {
+        tabBarController.delegate = self
+        tabBarController.selectedIndex = TabBarItem.home.tabOrderNumber()
+        tabBarController.tabBar.isTranslucent = false
+        tabBarController.tabBar.backgroundColor = .white
+        tabBarController.setViewControllers(tabNavControllers, animated: false)
+        
+        self.navigationController.viewControllers = [tabBarController]
+        
+    
+    }
+    
+    deinit {
+        print("TabCoordinator deinit")
     }
 }
 
@@ -99,31 +118,10 @@ extension MainTabCoordinator: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         guard let index = tabBarController.viewControllers?.firstIndex(of: viewController) else { return }
         
+        tabBarController.selectedIndex = index
         let selectedCoordinator = childCoordinators[index]
-        childDidFinish(selectedCoordinator)
+       // childDidFinish(selectedCoordinator)
     }
 }
 
-class TabBarCoordinatorFactory {
-    
-    func makeChildTabCoordinators(tabItem: TabBarItem) -> Coordinator {
-        let navigationController = UINavigationController()
-        switch tabItem {
-        case .home:
-            return HomeTabCoordinator(navigationController: navigationController,
-                                      tabBarItem: UITabBarItem(title: tabItem.tabItemTitle(),
-                                                               image: nil,
-                                                               tag: tabItem.tabOrderNumber()))
-        case .feed:
-            return FeedTabCoordinator(navigationController: navigationController,
-                                      tabBarItem: UITabBarItem(title: tabItem.tabItemTitle(),
-                                                               image: nil,
-                                                               tag: tabItem.tabOrderNumber()))
-        case .profile:
-            return ProfileTabCoordinator(navigationController: navigationController,
-                                         tabBarItem: UITabBarItem(title: tabItem.tabItemTitle(),
-                                                                  image: nil,
-                                                                  tag: tabItem.tabOrderNumber()))
-        }
-    }
-}
+

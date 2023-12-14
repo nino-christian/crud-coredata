@@ -8,7 +8,9 @@
 import Foundation
 import UIKit
 
-final class FeedTabCoordinator: TabBarCoordinator {
+final class FeedTabCoordinator: NSObject, TabBarCoordinator {
+    var viewController: FeedTabViewController
+    
     var tabBarItem: UITabBarItem
     
     weak var parentCoordinator: MainTabCoordinator?
@@ -20,19 +22,30 @@ final class FeedTabCoordinator: TabBarCoordinator {
     init(navigationController: UINavigationController, tabBarItem: UITabBarItem) {
         self.navigationController = navigationController
         self.tabBarItem = tabBarItem
+        self.viewController = ViewControllerFactory.makeFeedTabViewController()
+        self.viewController.tabBarItem = tabBarItem
     }
 
     func start() {
-        let addTabViewController = FeedTabViewController()
-        addTabViewController.coordinator = self
+        navigationController.delegate = self
+        viewController.tabBarItem = self.tabBarItem
+        viewController.coordinator = self
         navigationController.navigationBar.isHidden = true
-        navigationController.pushViewController(addTabViewController, animated: true)
+        navigationController.pushViewController(viewController, animated: true)
+        
+       
     }
     
     func finish() {
         
     }
     
-    
+    func childDidFinish(_ coordinator: Coordinator?) {
+        guard let coordinator = coordinator else { return }
+        removeChildCoordinator(coordinator)
+    }
 }
 
+extension FeedTabCoordinator: UINavigationControllerDelegate {
+    
+}

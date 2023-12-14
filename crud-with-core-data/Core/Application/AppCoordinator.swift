@@ -9,40 +9,40 @@ import Foundation
 import UIKit
 
 protocol AppCoordinatorProtocol: Coordinator {
-    func loginFlow()
-    func mainTabBarFlow()
+    func startAuthenticationFlow()
+    func startAuthenticatedFlow()
 }
 
 final class AppCoordinator: NSObject, AppCoordinatorProtocol, UINavigationControllerDelegate {
+
     let welcomeCoordinator: WelcomeCoordinator
+    let tabBarCoordinator: MainTabCoordinator
     
     var childCoordinators = [Coordinator]()
     
-    init( welcomeCoordinator: WelcomeCoordinator
+    init( welcomeCoordinator: WelcomeCoordinator,
+          tabBarCoordinator: MainTabCoordinator
     ) {
         self.welcomeCoordinator = welcomeCoordinator
+        self.tabBarCoordinator = tabBarCoordinator
     }
     
     func start() {
-        loginFlow()
+        startAuthenticationFlow()
     }
     
-    func mainTabBarCoordinator() {
-//        let mainTabCoordinator = MainTabCoordinator(navigationController: navigationController)
-//        mainTabCoordinator.parentCoordinator = self
-//        childCoordinators.append(mainTabCoordinator)
-//        mainTabCoordinator.start()
-    }
-    
-    func loginFlow() {
+    func startAuthenticationFlow() {
         welcomeCoordinator.parentCoordinator = self
-        childCoordinators.append(welcomeCoordinator)
         welcomeCoordinator.start()
+        childCoordinators.append(welcomeCoordinator)
     }
     
-    func mainTabBarFlow() {
-        
+    func startAuthenticatedFlow() {
+        tabBarCoordinator.parentCoordinator = self
+        tabBarCoordinator.start()
+        childCoordinators.append(tabBarCoordinator)
     }
+    
     
     func finish() {
         

@@ -33,6 +33,7 @@
 		C1BB063A2B200CAF00AE52E5 /* UserCoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB06392B200CAF00AE52E5 /* UserCoreRepository.swift */; };
 		C1BFD5B52B2141F800F57CC9 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFD5B42B2141F800F57CC9 /* WelcomeViewController.swift */; };
 		C1BFD5BB2B2148EB00F57CC9 /* WelcomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BFD5BA2B2148EB00F57CC9 /* WelcomeCoordinator.swift */; };
+		C1C0F0732B2B9E4700F75AC2 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C0F0722B2B9E4700F75AC2 /* ViewControllerFactory.swift */; };
 		C1CB56312B1A5DD500F91D5C /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CB56302B1A5DD500F91D5C /* UserTableViewCell.swift */; };
 		C1CE43042B195A2B005EA95B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CE43032B195A2B005EA95B /* AppDelegate.swift */; };
 		C1CE43062B195A2B005EA95B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CE43052B195A2B005EA95B /* SceneDelegate.swift */; };
@@ -76,6 +77,7 @@
 		C1BB06392B200CAF00AE52E5 /* UserCoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCoreRepository.swift; sourceTree = "<group>"; };
 		C1BFD5B42B2141F800F57CC9 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C1BFD5BA2B2148EB00F57CC9 /* WelcomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeCoordinator.swift; sourceTree = "<group>"; };
+		C1C0F0722B2B9E4700F75AC2 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
 		C1CB56302B1A5DD500F91D5C /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		C1CE43002B195A2B005EA95B /* crud-with-core-data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "crud-with-core-data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1CE43032B195A2B005EA95B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				C1B4C9912B2104FE00151833 /* AppCoordinator.swift */,
 				C1B4C9932B2107FE00151833 /* Coordinator.swift */,
 				C1AB43FC2B2A814E0052CAE1 /* CoordinatorFactory.swift */,
+				C1C0F0722B2B9E4700F75AC2 /* ViewControllerFactory.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -243,8 +246,8 @@
 				C1CB56302B1A5DD500F91D5C /* UserTableViewCell.swift */,
 				C14A96F72B1FA5E400A70630 /* AddStudentTabVM.swift */,
 				C1B4CA912B2284FE0048D9C9 /* FeedTabViewController.swift */,
-				C1B4CA932B2285890048D9C9 /* HomeTabViewController.swift */,
 				C1AB43FE2B2A8A660052CAE1 /* ProfileTabViewController.swift */,
+				C1B4CA932B2285890048D9C9 /* HomeTabViewController.swift */,
 			);
 			path = TabController;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				C11806F32B1AA6A40086B768 /* SnackBarView.swift in Sources */,
 				C1BB062B2B1FFB5700AE52E5 /* User+CoreDataClass.swift in Sources */,
 				C1BB062C2B1FFB5700AE52E5 /* User+CoreDataProperties.swift in Sources */,
+				C1C0F0732B2B9E4700F75AC2 /* ViewControllerFactory.swift in Sources */,
 				C16E2BD62B1EB20B00A04CE1 /* AppButton.swift in Sources */,
 				C1BB063A2B200CAF00AE52E5 /* UserCoreRepository.swift in Sources */,
 				C1D629242B1E759200559F02 /* Post+CoreDataProperties.swift in Sources */,
