@@ -12,6 +12,7 @@ class WelcomeViewController: UIViewController {
     weak var coordinator: WelcomeCoordinator?
     
     private let titleLabel: UILabel = UILabel()
+    private let navButton: UIButton = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +34,23 @@ class WelcomeViewController: UIViewController {
         titleLabel.text = "WELCOME SCREEN"
         titleLabel.font = UIFont.systemFont(ofSize: 25, weight: .bold)
         titleLabel.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.top.equalToSuperview().inset(25)
+            make.centerX.equalToSuperview()
+        }
+        
+        self.view.addSubview(navButton)
+        navButton.setTitle("Click me!", for: .normal)
+        navButton.setTitleColor(.black, for: .normal)
+        navButton.addTarget(self, action: #selector(navigateTo), for: .touchUpInside)
+        navButton.snp.makeConstraints { make in
+            make.bottom.equalToSuperview().inset(15)
+            make.centerX.equalToSuperview()
+            make.leading.equalToSuperview().inset(15)
+            make.trailing.equalToSuperview().inset(15)
         }
     }
     
+    @objc func navigateTo() {
+        coordinator?.finish()
+    }
 }

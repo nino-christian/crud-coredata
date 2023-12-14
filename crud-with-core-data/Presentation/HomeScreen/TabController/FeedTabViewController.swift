@@ -7,8 +7,8 @@
 
 import UIKit
 
-class AddTabViewController: UIViewController {
-    weak var coordinator: AddTabCoordinator?
+class FeedTabViewController: UIViewController {
+    weak var coordinator: FeedTabCoordinator?
     
     private var firstNameLabel: AppFormLabel?
     private var firstNameTextField: AppFormTextField?
@@ -41,7 +41,7 @@ class AddTabViewController: UIViewController {
 
 }
 
-extension AddTabViewController {
+extension FeedTabViewController {
     private func setupViews() {
         self.view.backgroundColor = .systemBackground
 

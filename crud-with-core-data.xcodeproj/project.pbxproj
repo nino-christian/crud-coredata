@@ -17,12 +17,14 @@
 		C16E2BD12B1EA0ED00A04CE1 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E2BD02B1EA0ED00A04CE1 /* AppColors.swift */; };
 		C16E2BD42B1EA51800A04CE1 /* Ext+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E2BD32B1EA51800A04CE1 /* Ext+UIColor.swift */; };
 		C16E2BD62B1EB20B00A04CE1 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16E2BD52B1EB20B00A04CE1 /* AppButton.swift */; };
-		C1B4C9922B2104FE00151833 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4C9912B2104FE00151833 /* MainCoordinator.swift */; };
+		C1AB43FD2B2A814E0052CAE1 /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB43FC2B2A814E0052CAE1 /* CoordinatorFactory.swift */; };
+		C1AB43FF2B2A8A660052CAE1 /* ProfileTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB43FE2B2A8A660052CAE1 /* ProfileTabViewController.swift */; };
+		C1AB44012B2A8A7A0052CAE1 /* ProfileTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1AB44002B2A8A7A0052CAE1 /* ProfileTabCoordinator.swift */; };
+		C1B4C9922B2104FE00151833 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4C9912B2104FE00151833 /* AppCoordinator.swift */; };
 		C1B4C9942B2107FE00151833 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4C9932B2107FE00151833 /* Coordinator.swift */; };
 		C1B4CA8C2B2263E80048D9C9 /* HomeTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4CA8B2B2263E80048D9C9 /* HomeTabCoordinator.swift */; };
-		C1B4CA8E2B2264290048D9C9 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4CA8D2B2264290048D9C9 /* MainTabBarController.swift */; };
-		C1B4CA902B22846F0048D9C9 /* AddTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4CA8F2B22846F0048D9C9 /* AddTabCoordinator.swift */; };
-		C1B4CA922B2284FE0048D9C9 /* AddTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4CA912B2284FE0048D9C9 /* AddTabViewController.swift */; };
+		C1B4CA902B22846F0048D9C9 /* FeedTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4CA8F2B22846F0048D9C9 /* FeedTabCoordinator.swift */; };
+		C1B4CA922B2284FE0048D9C9 /* FeedTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4CA912B2284FE0048D9C9 /* FeedTabViewController.swift */; };
 		C1B4CA942B2285890048D9C9 /* HomeTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4CA932B2285890048D9C9 /* HomeTabViewController.swift */; };
 		C1B4CA962B2288560048D9C9 /* MainTabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B4CA952B2288560048D9C9 /* MainTabCoordinator.swift */; };
 		C1BB062B2B1FFB5700AE52E5 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BB06292B1FFB5700AE52E5 /* User+CoreDataClass.swift */; };
@@ -58,12 +60,14 @@
 		C16E2BD02B1EA0ED00A04CE1 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		C16E2BD32B1EA51800A04CE1 /* Ext+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ext+UIColor.swift"; sourceTree = "<group>"; };
 		C16E2BD52B1EB20B00A04CE1 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
-		C1B4C9912B2104FE00151833 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		C1AB43FC2B2A814E0052CAE1 /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		C1AB43FE2B2A8A660052CAE1 /* ProfileTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabViewController.swift; sourceTree = "<group>"; };
+		C1AB44002B2A8A7A0052CAE1 /* ProfileTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTabCoordinator.swift; sourceTree = "<group>"; };
+		C1B4C9912B2104FE00151833 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		C1B4C9932B2107FE00151833 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C1B4CA8B2B2263E80048D9C9 /* HomeTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabCoordinator.swift; sourceTree = "<group>"; };
-		C1B4CA8D2B2264290048D9C9 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		C1B4CA8F2B22846F0048D9C9 /* AddTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTabCoordinator.swift; sourceTree = "<group>"; };
-		C1B4CA912B2284FE0048D9C9 /* AddTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTabViewController.swift; sourceTree = "<group>"; };
+		C1B4CA8F2B22846F0048D9C9 /* FeedTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTabCoordinator.swift; sourceTree = "<group>"; };
+		C1B4CA912B2284FE0048D9C9 /* FeedTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTabViewController.swift; sourceTree = "<group>"; };
 		C1B4CA932B2285890048D9C9 /* HomeTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabViewController.swift; sourceTree = "<group>"; };
 		C1B4CA952B2288560048D9C9 /* MainTabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabCoordinator.swift; sourceTree = "<group>"; };
 		C1BB06292B1FFB5700AE52E5 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -149,8 +153,9 @@
 		C1B4C98F2B2104E300151833 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				C1B4C9912B2104FE00151833 /* MainCoordinator.swift */,
+				C1B4C9912B2104FE00151833 /* AppCoordinator.swift */,
 				C1B4C9932B2107FE00151833 /* Coordinator.swift */,
+				C1AB43FC2B2A814E0052CAE1 /* CoordinatorFactory.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -237,9 +242,9 @@
 				C1CE431F2B196D4C005EA95B /* UserTableTabVM.swift */,
 				C1CB56302B1A5DD500F91D5C /* UserTableViewCell.swift */,
 				C14A96F72B1FA5E400A70630 /* AddStudentTabVM.swift */,
-				C1B4CA8D2B2264290048D9C9 /* MainTabBarController.swift */,
-				C1B4CA912B2284FE0048D9C9 /* AddTabViewController.swift */,
+				C1B4CA912B2284FE0048D9C9 /* FeedTabViewController.swift */,
 				C1B4CA932B2285890048D9C9 /* HomeTabViewController.swift */,
+				C1AB43FE2B2A8A660052CAE1 /* ProfileTabViewController.swift */,
 			);
 			path = TabController;
 			sourceTree = "<group>";
@@ -249,8 +254,9 @@
 			children = (
 				C1BFD5AD2B21339E00F57CC9 /* TabController */,
 				C1B4CA8B2B2263E80048D9C9 /* HomeTabCoordinator.swift */,
-				C1B4CA8F2B22846F0048D9C9 /* AddTabCoordinator.swift */,
+				C1B4CA8F2B22846F0048D9C9 /* FeedTabCoordinator.swift */,
 				C1B4CA952B2288560048D9C9 /* MainTabCoordinator.swift */,
+				C1AB44002B2A8A7A0052CAE1 /* ProfileTabCoordinator.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -461,17 +467,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				C16E2BD42B1EA51800A04CE1 /* Ext+UIColor.swift in Sources */,
-				C1B4C9922B2104FE00151833 /* MainCoordinator.swift in Sources */,
+				C1B4C9922B2104FE00151833 /* AppCoordinator.swift in Sources */,
 				C1BFD5BB2B2148EB00F57CC9 /* WelcomeCoordinator.swift in Sources */,
 				C11806F62B1AA6A40086B768 /* AppFormTextField.swift in Sources */,
 				C11806F72B1AA6A40086B768 /* AppFormLabel.swift in Sources */,
 				C1CB56312B1A5DD500F91D5C /* UserTableViewCell.swift in Sources */,
-				C1B4CA922B2284FE0048D9C9 /* AddTabViewController.swift in Sources */,
+				C1B4CA922B2284FE0048D9C9 /* FeedTabViewController.swift in Sources */,
+				C1AB44012B2A8A7A0052CAE1 /* ProfileTabCoordinator.swift in Sources */,
 				C14A96F82B1FA5E400A70630 /* AddStudentTabVM.swift in Sources */,
 				C1CE43222B196E0A005EA95B /* CoreDataManager.swift in Sources */,
+				C1AB43FD2B2A814E0052CAE1 /* CoordinatorFactory.swift in Sources */,
 				C1CE431D2B195B10005EA95B /* Student+CoreDataProperties.swift in Sources */,
-				C1B4CA902B22846F0048D9C9 /* AddTabCoordinator.swift in Sources */,
-				C1B4CA8E2B2264290048D9C9 /* MainTabBarController.swift in Sources */,
+				C1B4CA902B22846F0048D9C9 /* FeedTabCoordinator.swift in Sources */,
 				C1CE430E2B195A2B005EA95B /* crud_with_core_data.xcdatamodeld in Sources */,
 				C11806F52B1AA6A40086B768 /* AppFormValidatorLabel.swift in Sources */,
 				C1BB06382B1FFE4F00AE52E5 /* UserCoreRepoProtocol.swift in Sources */,
@@ -484,6 +491,7 @@
 				C1BB063A2B200CAF00AE52E5 /* UserCoreRepository.swift in Sources */,
 				C1D629242B1E759200559F02 /* Post+CoreDataProperties.swift in Sources */,
 				C1BFD5B52B2141F800F57CC9 /* WelcomeViewController.swift in Sources */,
+				C1AB43FF2B2A8A660052CAE1 /* ProfileTabViewController.swift in Sources */,
 				C1B4C9942B2107FE00151833 /* Coordinator.swift in Sources */,
 				C16E2BD12B1EA0ED00A04CE1 /* AppColors.swift in Sources */,
 				C1CE43062B195A2B005EA95B /* SceneDelegate.swift in Sources */,

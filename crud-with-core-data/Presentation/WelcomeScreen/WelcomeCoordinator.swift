@@ -8,8 +8,13 @@
 import Foundation
 import UIKit
 
-final class WelcomeCoordinator: Coordinator {
-    weak var parentCoordinator: MainCoordinator?
+
+protocol WelcomeCoordinatorProtocol: Coordinator {
+    func startLoginViewController()
+}
+
+final class WelcomeCoordinator: WelcomeCoordinatorProtocol {
+    weak var parentCoordinator: AppCoordinator?
     
     var navigationController: UINavigationController
     var childCoordinators: [Coordinator] = []
@@ -19,13 +24,17 @@ final class WelcomeCoordinator: Coordinator {
     }
     
     func start() {
+        startLoginViewController()
+    }
+    
+    func finish() {
+        parentCoordinator?.mainTabBarFlow()
+    }
+    
+    func startLoginViewController() {
         let welcomeViewController = WelcomeViewController()
         welcomeViewController.coordinator = self
         navigationController.navigationBar.isHidden = true
         navigationController.pushViewController(welcomeViewController, animated: true)
-    }
-    
-    func finish() {
-        
     }
 }
