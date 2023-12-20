@@ -37,4 +37,8 @@ final class WelcomeCoordinator: WelcomeCoordinatorProtocol {
         navigationController.navigationBar.isHidden = true
         navigationController.pushViewController(welcomeViewController, animated: true)
     }
+    
+    deinit {
+        print("Welcome Coordinator deallocated")
+    }
 }

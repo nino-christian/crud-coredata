@@ -44,6 +44,10 @@ final class FeedTabCoordinator: NSObject, TabBarCoordinator {
         guard let coordinator = coordinator else { return }
         removeChildCoordinator(coordinator)
     }
+    
+    deinit {
+        print("Feed tab Coordinator deallocated")
+    }
 }
 
 extension FeedTabCoordinator: UINavigationControllerDelegate {

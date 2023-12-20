@@ -42,6 +42,10 @@ final class ProfileTabCoordinator: NSObject, TabBarCoordinator {
         guard let coordinator = coordinator else { return }
         removeChildCoordinator(coordinator)
     }
+    
+    deinit {
+        print("Profile tab Coordinator deallocated")
+    }
 }
 
 extension ProfileTabCoordinator: UINavigationControllerDelegate {

@@ -45,6 +45,9 @@ final class HomeTabCoordinator: NSObject, TabBarCoordinator {
         removeChildCoordinator(coordinator)
     }
     
+    deinit {
+        print("Home tab Coordinator deallocated")
+    }
 }
 
 extension HomeTabCoordinator: UINavigationControllerDelegate {
