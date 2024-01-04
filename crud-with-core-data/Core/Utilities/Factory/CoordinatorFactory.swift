@@ -14,18 +14,16 @@ class CoordinatorFactory {
         let welcomeCoordinator = makeWelcomeCoordinator(navigationController: navigationController)
         let tabBarCoordinator = makeTabBarCoordinator(navigationController: navigationController)
         
-        return AppCoordinator(welcomeCoordinator: welcomeCoordinator as! WelcomeCoordinator,
-                              tabBarCoordinator: tabBarCoordinator as! MainTabCoordinator)
+        return AppCoordinator(welcomeCoordinator: welcomeCoordinator,
+                              tabBarCoordinator: tabBarCoordinator)
     }
     
-    static func makeWelcomeCoordinator(navigationController: UINavigationController) -> Coordinator {
+    static func makeWelcomeCoordinator(navigationController: UINavigationController) -> WelcomeCoordinator {
         let welcomeCoordinator = WelcomeCoordinator(navigationController: navigationController)
-        
         return welcomeCoordinator
-      
     }
     
-    static func makeTabBarCoordinator(navigationController: UINavigationController) -> Coordinator {
+    static func makeTabBarCoordinator(navigationController: UINavigationController) -> MainTabCoordinator {
         let tabBarController = UITabBarController()
         let tabBarCoordinator = MainTabCoordinator(navigationController: navigationController,
                                                    tabBarController: tabBarController)
@@ -37,19 +35,19 @@ class CoordinatorFactory {
         switch tabItem {
         case .home:
             return HomeTabCoordinator(navigationController: navigationController,
-                                      tabBarItem: UITabBarItem(title: tabItem.tabItemTitle(),
+                                      tabBarItem: UITabBarItem(title: tabItem.tabItemTitle,
                                                                image: .actions,
-                                                               tag: tabItem.tabOrderNumber()))
+                                                               tag: tabItem.tabOrderNumber))
         case .feed:
             return FeedTabCoordinator(navigationController: navigationController,
-                                      tabBarItem: UITabBarItem(title: tabItem.tabItemTitle(),
+                                      tabBarItem: UITabBarItem(title: tabItem.tabItemTitle,
                                                                image: .checkmark,
-                                                               tag: tabItem.tabOrderNumber()))
+                                                               tag: tabItem.tabOrderNumber))
         case .profile:
             return ProfileTabCoordinator(navigationController: navigationController,
-                                         tabBarItem: UITabBarItem(title: tabItem.tabItemTitle(),
+                                         tabBarItem: UITabBarItem(title: tabItem.tabItemTitle,
                                                                   image: .remove,
-                                                                  tag: tabItem.tabOrderNumber()))
+                                                                  tag: tabItem.tabOrderNumber))
         }
     }
 }

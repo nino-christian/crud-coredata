@@ -24,10 +24,12 @@ final class WelcomeCoordinator: WelcomeCoordinatorProtocol {
     }
     
     func start() {
+        print(parentCoordinator?.childCoordinators)
         startLoginViewController()
     }
     
     func finish() {
+        parentCoordinator?.childDidFinish(self)
         parentCoordinator?.startAuthenticatedFlow()
     }
     
@@ -36,9 +38,5 @@ final class WelcomeCoordinator: WelcomeCoordinatorProtocol {
         welcomeViewController.coordinator = self
         navigationController.navigationBar.isHidden = true
         navigationController.pushViewController(welcomeViewController, animated: true)
-    }
-    
-    deinit {
-        print("Welcome Coordinator deallocated")
     }
 }

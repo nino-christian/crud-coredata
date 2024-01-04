@@ -51,12 +51,6 @@ class SnackBarView: UIView {
         snackBarText.textColor = .white
         snackBarText.font = UIFont.systemFont(ofSize: 14)
         snackBarText.translatesAutoresizingMaskIntoConstraints = true
-//
-//        NSLayoutConstraint.activate([
-//            snackBarText.centerYAnchor.constraint(equalTo: self.centerYAnchor)
-//            snackBarText.leadingAnchor.constraint(equalTo: self.leadingAnchor)
-//        ])
-        
     }
     private func showSnackBar(width: CGFloat, height: CGFloat, x: CGFloat, y: CGFloat){
         self.frame = CGRect(x: x,

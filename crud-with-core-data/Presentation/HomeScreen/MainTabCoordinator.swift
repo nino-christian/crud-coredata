@@ -26,7 +26,7 @@ enum TabBarItem {
         }
     }
     
-    func tabItemTitle() -> String {
+    var tabItemTitle: String {
         switch self {
         case .home:
             return "Home"
@@ -37,7 +37,7 @@ enum TabBarItem {
         }
     }
     
-    func tabOrderNumber() -> Int {
+    var tabOrderNumber: Int {
         switch self {
         case .home:
             return 0
@@ -72,7 +72,7 @@ final class MainTabCoordinator: NSObject, Coordinator{
     
     func start() {
         let tabItems: [TabBarItem] = [.home, .feed, .profile]
-            .sorted(by: { $0.tabOrderNumber() < $1.tabOrderNumber() })
+            .sorted(by: { $0.tabOrderNumber < $1.tabOrderNumber })
         
         let tabCoordinators: [TabBarCoordinator] = tabItems.compactMap {
             let coordinator = CoordinatorFactory.makeChildTabCoordinators(tabItem: $0)
@@ -99,7 +99,7 @@ final class MainTabCoordinator: NSObject, Coordinator{
     
     private func prepareTabBarController(withControllers tabNavControllers: [UINavigationController]) {
         tabBarController.delegate = self
-        tabBarController.selectedIndex = TabBarItem.home.tabOrderNumber()
+        tabBarController.selectedIndex = TabBarItem.home.tabOrderNumber
         tabBarController.tabBar.isTranslucent = false
         tabBarController.tabBar.backgroundColor = .white
         tabBarController.setViewControllers(tabNavControllers, animated: false)

@@ -53,4 +53,8 @@ class WelcomeViewController: UIViewController {
     @objc func navigateTo() {
         coordinator?.finish()
     }
+    
+    deinit {
+        print("Welcome Controller is deallocated")
+    }
 }

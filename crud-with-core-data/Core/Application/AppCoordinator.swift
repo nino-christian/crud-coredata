@@ -15,8 +15,8 @@ protocol AppCoordinatorProtocol: Coordinator {
 
 final class AppCoordinator: NSObject, AppCoordinatorProtocol, UINavigationControllerDelegate {
 
-    let welcomeCoordinator: WelcomeCoordinator
-    let tabBarCoordinator: MainTabCoordinator
+    let welcomeCoordinator: WelcomeCoordinator!
+    let tabBarCoordinator: MainTabCoordinator!
     
     var childCoordinators = [Coordinator]()
     
@@ -32,41 +32,25 @@ final class AppCoordinator: NSObject, AppCoordinatorProtocol, UINavigationContro
     }
     
     func startAuthenticationFlow() {
+        childCoordinators.append(welcomeCoordinator)
         welcomeCoordinator.parentCoordinator = self
         welcomeCoordinator.start()
-        childCoordinators.append(welcomeCoordinator)
+        
     }
     
     func startAuthenticatedFlow() {
+        childCoordinators.append(tabBarCoordinator)
         tabBarCoordinator.parentCoordinator = self
         tabBarCoordinator.start()
-        childCoordinators.append(tabBarCoordinator)
+        
     }
-    
     
     func finish() {
         
     }
     
-    func childDidFinish(_ coordinator: Coordinator?) {
-        guard let coordinator = coordinator else { return }
+    func childDidFinish(_ child: Coordinator?) {
+        guard let coordinator = child else { return }
         removeChildCoordinator(coordinator)
-    }
-    
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        guard let fromViewController = navigationController.transitionCoordinator?.viewController(forKey: .from) else { return }
-        
-        if navigationController.viewControllers.contains(fromViewController) {
-            return
-        }
-    
-        switch fromViewController {
-        case let welcomeViewController as WelcomeViewController:
-            childDidFinish(welcomeViewController.coordinator)
-//        case let mainTabController as MainTabBarController:
-//            childDidFinish(mainTabController.coordinator)
-        default:
-            break
-        }
     }
 }
