@@ -47,6 +47,7 @@
 		C1CE43222B196E0A005EA95B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1CE43212B196E0A005EA95B /* CoreDataManager.swift */; };
 		C1D629232B1E759200559F02 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D629212B1E759200559F02 /* Post+CoreDataClass.swift */; };
 		C1D629242B1E759200559F02 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D629222B1E759200559F02 /* Post+CoreDataProperties.swift */; };
+		C1EB4FC92B58A9C6003AE700 /* SnackbarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EB4FC82B58A9C6003AE700 /* SnackbarManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		C1CE43212B196E0A005EA95B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		C1D629212B1E759200559F02 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		C1D629222B1E759200559F02 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		C1EB4FC82B58A9C6003AE700 /* SnackbarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnackbarManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		C11806ED2B1AA64F0086B768 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				C1EB4FC72B58A9B9003AE700 /* Managers */,
 				C1C0F0772B2BB96200F75AC2 /* Factory */,
 				C1C0F0792B2BB97800F75AC2 /* Views */,
 				C1CC89512B463FB4002BC181 /* StatefulView.swift */,
@@ -398,6 +401,14 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		C1EB4FC72B58A9B9003AE700 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C1EB4FC82B58A9C6003AE700 /* SnackbarManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -514,6 +525,7 @@
 			files = (
 				C16E2BD42B1EA51800A04CE1 /* Ext+UIColor.swift in Sources */,
 				C1B4C9922B2104FE00151833 /* AppCoordinator.swift in Sources */,
+				C1EB4FC92B58A9C6003AE700 /* SnackbarManager.swift in Sources */,
 				C1BFD5BB2B2148EB00F57CC9 /* WelcomeCoordinator.swift in Sources */,
 				C11806F62B1AA6A40086B768 /* AppFormTextField.swift in Sources */,
 				C11806F72B1AA6A40086B768 /* AppFormLabel.swift in Sources */,

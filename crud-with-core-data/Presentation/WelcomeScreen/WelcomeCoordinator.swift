@@ -24,7 +24,6 @@ final class WelcomeCoordinator: WelcomeCoordinatorProtocol {
     }
     
     func start() {
-        print(parentCoordinator?.childCoordinators)
         startLoginViewController()
     }
     
